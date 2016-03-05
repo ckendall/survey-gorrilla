@@ -1,1 +1,11 @@
-index.erb
+<header>
+<h1>All Survey List</h1>
+</header>
+
+<section>
+<% @surveys.each do |each| %>
+
+<%= each.survey_name %>
+<% end %>
+</section>
+
