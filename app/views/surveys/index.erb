@@ -5,8 +5,8 @@
 
 <section>
   <ul>
-    <% @users.each do |author|%>
-      <li><a href =<%= "surveys/#{author.id}" %>><%=author.username%></a>
+    <% @survey.each do |survey|%>
+      <li><a href =<%= "surveys/#{survey.id}" %>><%=survey.survey_name%></a>
     <%end%>
   </ul>
 </section>

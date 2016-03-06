@@ -1,12 +1,9 @@
 <div class="container login registration">
   <div class="row">
     <div class="col-sm-12">
-      <div class="login-header">
-        <img class="login-logo" src="/imgs/survey_gorilla.png" alt="logo">
-      </div>
       <h1 class="text-center">Join Survey Gorilla!</h1>
       <p class="text-center">Please fill in the following information.</p>
-      <form class="login-form" action="/users" method="post">
+      <form class="login-form" action="/users/new" method="post">
         <p class="errors">
           <% if params[:errors] != nil %>
             Something went wrong here ... <%=params[:errors] %>
