@@ -2,16 +2,16 @@ get '/' do
   redirect '/login'
 end
 
-get '/login' do 
+get '/login' do
   erb :'index'
 end
 
 post '/' do
-  session[:id] = nil
+  session[:user_id] = nil
   redirect '/login'
 end
 
-post '/login' do 
+post '/login' do
   @user = User.find_by(username: params[:username])
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
@@ -33,3 +33,20 @@ post '/users/new' do
     redirect '/login'
   end
 end
+
+get '/users/:id' do
+  @user = User.find_by_id(params[:id])
+  if @user # if user exist in the database (not nil)
+    if session[:user_id] != nil # Check if session id is matching with the user id
+      erb :'/users/index' # This render the content for specific user. Also suggesting to change name to /users/user_homepage
+    else
+      # erb :'/users/index'
+      redirect '/' # redirect back to home page if session id doesn't match
+    end
+  else
+    @message = "User not found!" # Create message for what goes wrong for user when returning back to homepage
+    erb :index # Render the index page with the message
+  end
+end
+
+
