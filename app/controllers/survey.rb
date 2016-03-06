@@ -1,5 +1,5 @@
 get '/surveys' do
-
+  @surveyship = Surveyship.all
 	@surveys = Survey.all
 	erb :'/surveys/index'
 
@@ -17,9 +17,10 @@ post '/surveys' do
 end
 
 get '/surveys/:id' do
-  @survey = Surveys.find(id: params[:id])
+  @survey = Survey.find(params[:id])
   @question = Question.find_by(survey_id: @survey.id)
-  erb :'surveys/one_survey'
+  @choice = Choice.find_by(question_id: @question.id)
+  erb :'surveys/show'
 end
 
 get 'surveys/:id/edit' do
