@@ -3,9 +3,12 @@
 </header>
 
 <section>
+<ul>
 <% @surveys.each do |each| %>
 
-<%= each.survey_name %>
+<li>Author:<%=User.where(id: each.user_id).pluck(:username)%>---
+Survey Name:<%= each.survey_name %></li>
 <% end %>
+</ul>
 </section>
 

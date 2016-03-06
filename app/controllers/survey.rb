@@ -1,6 +1,7 @@
 get '/surveys' do
 
-	@surveys = Survey.all
+	@surveys = Survey.all.each
+
 	erb :'/surveys/index'
 
 end
