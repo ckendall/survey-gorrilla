@@ -2,10 +2,9 @@
 <h1>All Survey List</h1>
 </header>
 
-<section>
-<% @surveys.each do |each| %>
-
-<%= each.survey_name %>
-<% end %>
-</section>
-
+<% @survey.each do |survey|%>
+<p>
+<%survey.username%>
+<%= survey.survey_name%>
+</p>
+<%end%>
