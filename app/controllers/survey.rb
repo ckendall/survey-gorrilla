@@ -1,9 +1,6 @@
 get '/surveys' do
-
-	@surveys = Survey.all.each
-
+  @users = User.all
 	erb :'/surveys/index'
-
 end
 
 get '/surveys/new' do
@@ -18,7 +15,7 @@ post '/surveys' do
 end
 
 get '/surveys/:id' do
-  @survey = Surveys.find(id: params[:id])
+  @survey = Survey.find(id: params[:id])
   @question = Question.find_by(survey_id: @survey.id)
   erb :'surveys/one_survey'
 end

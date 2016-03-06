@@ -1,14 +1,12 @@
 <header>
-<h1>All Survey List</h1>
+<h1>All Author List</h1>
 </header>
 
 <section>
-<ul>
-<% @surveys.each do |each| %>
-
-<li>Author:<%=User.where(id: each.user_id).pluck(:username)%>---
-Survey Name:<%= each.survey_name %></li>
-<% end %>
-</ul>
+  <ul>
+    <% @users.each do |author|%>
+      <li><a href =<%= "user/#{author.id}" %>><%=author.username%></a>
+    <%end%>
+  </ul>
 </section>
 
