@@ -1,10 +1,14 @@
 <header>
-<h1>All Survey List</h1>
+<h1>All Author List</h1>
 </header>
 
-<% @survey.each do |survey|%>
-<p>
-<%survey.username%>
-<%= survey.survey_name%>
-</p>
-<%end%>
+
+<section>
+  <ul>
+    <% @users.each do |author|%>
+      <li><a href =<%= "surveys/#{author.id}" %>><%=author.username%></a>
+    <%end%>
+  </ul>
+</section>
+
+
