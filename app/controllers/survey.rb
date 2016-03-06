@@ -1,6 +1,5 @@
 get '/surveys' do
-  @survey = Survey.all
-  @author = User.find_by(id: @survey.user_id)
+  @author = User.find
 	erb :'/surveys/index'
 end 
 
@@ -15,12 +14,12 @@ post '/surveys' do
   Choice.create(question_id: question.id, choice_name: params[:choice])
 end
 
-get '/surveys/:id' do
+get '/users/:user_id/surveys/:id' do
   @survey = Survey.find(params[:id])
   @question = Question.find_by(survey_id: @survey.id)
   @choice = Choice.find_by(question_id: @question.id)
-  @lame = Surveyship.find_by(author_id: @survey.user_id)
-  @shit = User.find_by(id: @lame.author_id)
+  @hey = Surveyship.find_by(author_id: @survey.user_id)
+  @user = User.find_by(id: @hey.author_id)
   erb :'surveys/show'
 end
 
