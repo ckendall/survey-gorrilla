@@ -16,3 +16,8 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
+
+
+// (function(){
+//     var pwd = document.getElementById('pwd')
+// })
