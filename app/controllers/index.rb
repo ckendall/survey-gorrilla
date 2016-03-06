@@ -48,5 +48,3 @@ get '/users/:id' do
     erb :index # Render the index page with the message
   end
 end
-
-post '/user'
