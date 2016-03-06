@@ -12,6 +12,7 @@ post '/surveys' do
   survey = Survey.create(survey_name: params[:survey_name])
   question = Question.create(survey_id: survey.id, question_name: params[:question])
   Choice.create(question_id: question.id, choice_name: params[:choice])
+  redirect '/surveys'
 end
 
 get '/surveys/:id' do

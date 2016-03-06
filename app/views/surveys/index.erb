@@ -5,7 +5,7 @@
 <section>
   <ul>
     <% @users.each do |author|%>
-      <li><a href =<%= "user/#{author.id}" %>><%=author.username%></a>
+      <li><a href =<%= "surveys/#{author.id}" %>><%=author.username%></a>
     <%end%>
   </ul>
 </section>
