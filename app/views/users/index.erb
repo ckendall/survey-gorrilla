@@ -1,3 +1,13 @@
-index.erb2
+<h1>Welcome to Gorilla, <%= @user.username %>!</h1>
 
-profile page
+<nav class="nav-bar">
+  <ul>
+    <li><a href="/surveys/new">Create a new survey</a></li>
+    <li><a href="/surveys">Show all existing survey</a></li>
+    <li>
+    <form action="/" method="post">
+      <input type="submit" value="Logout">
+    </form>
+    </li>
+  </ul>
+</div>
