@@ -1,9 +1,10 @@
 get '/surveys' do
+
 # Cody's local code  @users = User.all
 # 	erb :'/surveys/index'
 # end
   @survey = Survey.all
-  @author = User.find_by(id: @survey.user_id)
+  # @author = User.find_by(id: @survey.user_id)
 	erb :'/surveys/index'
 end
 
@@ -20,10 +21,12 @@ post '/surveys' do
 end
 
 get '/surveys/:id' do
-  #Cody's local code @survey = Survey.find(id: params[:id])
+
   @survey = Survey.find(params[:id])
   @question = Question.find_by(survey_id: @survey.id)
+  p @question
   @choice = Choice.find_by(question_id: @question.id)
+  p @choice
   @hey = Surveyship.find_by(author_id: @survey.user_id)
   @user = User.find_by(id: @hey.author_id)
   erb :'surveys/show'
