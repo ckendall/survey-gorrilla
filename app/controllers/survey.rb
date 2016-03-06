@@ -10,8 +10,10 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  Survey.create(survey_name: params[:survey_name])
-  Question.create(question_name: params[:question_name])
+  p params
+  survey = Survey.create(survey_name: params[:survey_name])
+  question = Question.create(survey_id: survey.id, question_name: params[:question])
+  Choice.create(question_id: question.id, choice_name: params[:choice])
 end
 
 get '/surveys/:id' do

@@ -2,10 +2,10 @@
 <h1><label>Create a new survey!!</label></h1>
 <form action="/surveys" method="POST">
     Survey name: <input type="text" name="survey_name">
-    Question: <input type="text" name="question_name">
+    Question: <input type="text" name="question[question_name]">
   <fieldsetid ="choice_group">
-    Choices: <input type="radio" value="submit"> True
-    <input type="radio" value="submit">False
+    Choices: <input type="radio" value="true" name="choice[choice_name]"> True
+    <input type="radio" value="false" name="choice[choice_name]">False
   </fieldset>
   <input type="submit" value="submit">
 </form>
