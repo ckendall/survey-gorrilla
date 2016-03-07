@@ -18,49 +18,53 @@
 // });
 
 
-(function(){
-    var pwd = document.getElementById('pwd');
-    var chk = document.getElementById('showPwd');
+// (function(){
+//     var pwd = document.getElementById('pwd');
+//     var chk = document.getElementById('showPwd');
 
-    addEventListener(chk, 'change', function(e) {
-        console.log("bananas")
-        var target = e.target || e.srcElement;
-        try {
-            console.log("bananas")
-            if (target.checked) {
-                pwd.type = 'text';
-                console.log("bananas")
-            } else {
-                pwd.type = 'password';
-            }
-        } catch(error) {
-            alert('This browser cannot switch type');
-        }
-    });
-}());
-
-// (function ($) {
-//     $.toggleShowPassword = function (options) {
-//         var settings = $.extend({
-//             field: "#password",
-//             control: "#toggle_show_password",
-//         }, options);
-
-//         var control = $(settings.control);
-//         var field = $(settings.field)
-
-//         control.bind('click', function () {
-//             if (control.is(':checked')) {
-//                 field.attr('type', 'text');
+//     addEventListener(chk, 'change', function(e) {
+//         console.log("bananas")
+//         var target = e.target || e.srcElement;
+//         try {
+//             console.log("bananas")
+//             if (target.checked) {
+//                 pwd.type = 'text';
+//                 console.log("bananas")
 //             } else {
-//                 field.attr('type', 'password');
+//                 pwd.type = 'password';
 //             }
-//         })
-//     };
-// }(jQuery));
+//         } catch(error) {
+//             alert('This browser cannot switch type');
+//         }
+//     });
+// }());
 
-// //Here how to call above plugin from everywhere in your application document body
-// $.toggleShowPassword({
-//     field: '#pwd',
-//     control: '#showPwd'
-// });
+$(document).ready(function ($) {
+    $.toggleShowPassword = function (options) {
+        var settings = $.extend({
+            field: "#password",
+            control: "#toggle_show_password",
+        }, options);
+
+        var control = $(settings.control);
+        var field = $(settings.field)
+
+        control.bind('click', function () {
+            if (control.is(':checked')) {
+                field.attr('type', 'text');
+            } else {
+                field.attr('type', 'password');
+            }
+        })
+    };
+}(jQuery));
+
+//Here how to call above plugin from everywhere in your application document body
+$.toggleShowPassword({
+    field: '#pwd',
+    control: '#showPwd'
+});
+
+$(document).ready(function() {
+    $("#my_audio").get(0).play();
+});
