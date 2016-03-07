@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     loads bootstrap
   -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <% if session[:user_id] %>
-          <a class="login-logo" href='/user/<%=session[:user_id]%>'><img class="login-logo" src="/imgs/survey_gorilla.png" alt="gorilla logo"></a>
+          <a class="login-logo" href='/users/<%=session[:user_id]%>'><img class="login-logo" src="/imgs/survey_gorilla.png" alt="gorilla logo"></a>
         <% else %>
           <div class="login-logo">
             <img class="login-logo" src="/imgs/survey_gorilla.png" alt="gorilla logo">
