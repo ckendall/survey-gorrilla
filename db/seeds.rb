@@ -14,7 +14,6 @@ end
   Choice.create(question_id: rand(1..4), choice_name: Faker::Lorem.word)
 end
 
-
 10.times do
   Surveyship.create(author_id: User.all.sample(1)[0].id, taker_id: User.all.sample(1)[0].id)
 end
