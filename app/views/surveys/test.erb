@@ -1,0 +1,61 @@
+<!-- This Is the test New Survey file. It doesn't go anywhere. This needs to be added to the new.erb -->
+
+<body>
+	<div id="container">
+		<header>
+			<h1>create an epic survey bruhhhhh</h1>
+		</header><!-- /header -->
+		
+		<section id="main">
+		
+	
+		<form method="post">
+
+		<p> 
+		<span class="btn btn-primary"id="addVar">Add Question</span>
+		</p>
+
+
+		<p class="alignRight">
+		<input class="btn btn-success" type="submit" value="Create">
+		</p>
+	
+		
+		</form>
+
+		
+		</section><!-- /main -->
+		
+		<footer>
+		
+		</footer><!-- /footer -->
+	</div><!--!/#container -->
+	<!-- !Javascript - at the bottom for fast page loading -->
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+	<script>
+	//initialize with 3
+	var startingNo = 0;
+	var $node = "";
+	for(varCount=0;varCount<=startingNo;varCount++){
+		var displayCount = varCount+1;
+		$node += '<p><label for="var'+displayCount+'">Question: </label><input type="text" name="var'+displayCount+'" id="var'+displayCount+'"><span class="removeVar btn btn-danger">Remove</span></p>';
+	}
+	$('form').prepend($node);
+	
+	$('form').on('click', '.removeVar', function(){
+		$(this).parent().remove();
+		//varCount--;
+	});
+
+	$('#addVar').on('click', function(){
+		//new node
+		varCount++;
+		$node = '<p><label for="var'+varCount+'">Question: </label><input type="text" name="var'+varCount+'" id="var'+varCount+'"><span class="removeVar btn btn-danger">Remove</span></p>';
+		$(this).parent().before($node);
+	});
+	
+	
+	</script>
+</body>
