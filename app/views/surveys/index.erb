@@ -1,12 +1,19 @@
-<header>
-<h1>All Author List</h1>
-</header>
+<div class="container">
+  <header class="gorilla">
+  <h1>All Survey List</h1>
+  </header>
+  <nav class="nav-bar">
+    <section>
+      <ul>
+        <% @survey.each do |survey|%>
+          <li><a href =<%= "surveys/#{survey.id}" %>><%=survey.survey_name%></a></li>
+        <%end%>
+      </ul>
+    </section>
+  </nav>
+</div>
+<footer class="bottom">
 
-<section>
-  <ul>
-    <% @survey.each do |survey|%>
-      <li><a href =<%= "surveys/#{survey.id}" %>><%=survey.survey_name%></a>
-    <%end%>
-  </ul>
-</section>
+<p>your links here</p>
+</footer>
 
