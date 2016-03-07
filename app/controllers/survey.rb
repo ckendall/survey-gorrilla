@@ -23,6 +23,9 @@ post '/surveys' do
   Choice.create(question_id: question.id, choice_name: params[:choice_name])
   redirect '/surveys'
 end
+get '/surveys/test' do
+  erb :'surveys/test'
+  end 
 
 get '/surveys/:id' do
 
@@ -55,4 +58,5 @@ end
 
 delete 'survey/:id' do
 end
+
 
