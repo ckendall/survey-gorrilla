@@ -45,7 +45,6 @@ get '/surveys/:id' do
   puts "*" * 50
   puts @choice
   puts "*" * 50
-
   @hey = Surveyship.find_by(author_id: @survey.user_id)
   puts "SURVEYSHIP"
     puts "*" * 50
