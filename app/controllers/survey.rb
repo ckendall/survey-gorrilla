@@ -14,26 +14,31 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
+  puts "PARAMS"
+  puts params
+  puts "*" * 20
   Surveyship.create(author_id: session[:user_id])
-  survey = Survey.create(survey_name: params[:survey_name], user_id: session[:user_id])
+  survey = Survey.create(user_id: session[:user_id], survey_name: params[:survey_name])
   question = Question.create(survey_id: survey.id, question_name: params[:question_name])
-  Choice.create(question_id: question.id, choice_name: params[:choice])
+  Choice.create(question_id: question.id, choice_name: params[:choice_name])
   redirect '/surveys'
 end
 
 get '/surveys/:id' do
+
+  puts "PARAMS id"
+ puts params[:id]
   @survey = Survey.find(params[:id])
-  p "=" *80
-  p @survey.inspect
-  p "=" *80
+  puts "Survey"
+
   @question = Question.find_by(survey_id: @survey.id)
+
   @choice = Choice.find_by(question_id: @question.id)
 
   @hey = Surveyship.find_by(author_id: @survey.user_id)
-  p "=" *80
-  p @hey.inspect
-  p "=" *80
+
   @user = User.find_by(id: @hey.author_id)
+
   erb :'surveys/show'
 end
 
