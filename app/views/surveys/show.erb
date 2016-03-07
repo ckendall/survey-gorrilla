@@ -2,9 +2,12 @@
 
   <% if session[:user_id] != @user.id %>
     <nav class="nav-bar">
-      <h2 class='username'><%=@user.username%> </h2>
-      <h1 class='survey-name'><%=@survey.survey_name%></h1>
-      <h3 class='question-name'><%=@question.question_name%></h3>
+      <h2 class='username'>Created by: <%=@user.username%></h2>
+      <h1 class='survey-name'>Survey Title: <br> <%=@survey.survey_name%></h1>
+      
+      <%@questions.each do |quest| %>
+      <h3 class='question-name'>Question: <%= quest.question_name %></h3>
+      <% end %>
     </nav>
     <form action="taker submission" method="POST">
     <label for ="answer">Answer: </label><br>
@@ -14,10 +17,12 @@
     </form>
   <% else %>
     <nav class="nav-bar">
-      <h2 class='username'><%=@user.username%> </h2>
-      <h1 class='survey-name'><%=@survey.survey_name%></h1>
-      <h3 class='question-name'><%= @question.question_name%></h3>
-      <p class='choice-name'><%=@choice.choice_name%></p>
+      <h2 class='username'>Created by: <%=@user.username%></h2>
+      <h1 class='survey-name'>Survey Title: <br> <%=@survey.survey_name%></h1>
+       <%@questions.each do |quest| %>
+      <h3 class='question-name'>Question: <%= quest.question_name %></h3>
+      <% end %>     
+    <!-- <p class='choice-name'>< %=@choice.choice_name%></p> -->
   </nav>
   <% end %>
 

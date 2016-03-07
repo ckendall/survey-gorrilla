@@ -1,5 +1,6 @@
 <img class="go-bananas center-block" src='/imgs/go-bananas.png'>
-<div class="container">
+<!-- <div class="container">
+>>>>>>> master
   <header class="gorilla">
   <h1><label>Create a new survey!!</label></h1>
   </header>
@@ -17,9 +18,61 @@
       </form>
     </div>
   </nav>
+<<<<<<< HEAD
 </div>
 <!-- <footer class="bottom">
 
 <p>your links here</p>
 </footer> -->
 
+  <div id="container">
+    <header>
+      <h1>create an epic survey</h1>
+    </header><!-- /header -->
+    <section id="main">
+    <form class="survey_create" action="/surveys" method="POST">
+    <label for="survey_name">Survey name: </label>
+    <p><input type="text" name="survey_name"></p>
+    <p> 
+    <span class="btn btn-primary"id="addVar">Add Question</span>
+    </p>
+    <p class="alignRight">
+    <input class="btn btn-success" type="submit" value="Create">
+    </p>
+    </form>
+  </section>
+  </div>
+
+
+
+
+
+
+<!-- jquery stuff -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>!window.jQuery && document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+  <script>
+  //initialize with 3
+  var startingNo = -1;
+  var $node = "";
+  for(varCount=0;varCount<=startingNo;varCount++){
+    var displayCount = varCount+1;
+    // $node += '<p><label for="var'+displayCount+'">Question: In for loop </label><input type="text" name="question'+displayCount+'" id="var'+displayCount+'"><span class="removeVar btn btn-danger">Remove</span></p>';
+  }
+  $('.survey_create').prepend($node);
+  
+  $('.survey_create').on('click', '.removeVar', function(){
+    varCount--;
+    $(this).parent().remove();
+    //varCount--;
+  });
+
+  $('#addVar').on('click', function(){
+    //new node
+    varCount++;
+    $node = '<p><label for="question'+varCount+'">Question:'+varCount+'</label><input type="text" name="question['+varCount+']" id="var'+varCount+'"><span class="removeVar btn btn-danger">Remove</span></p>';
+    $(this).parent().before($node);
+  });
+  
+  </script>
+</body>
