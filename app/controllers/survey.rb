@@ -25,40 +25,27 @@ post '/surveys' do
 end
 
 get '/surveys/:id' do
+
   puts "PARAMS id"
  puts params[:id]
- puts "*" * 30
   @survey = Survey.find(params[:id])
   puts "Survey"
-  puts "*" * 50
-  puts @survey.user_id
-  puts "*" * 50
 
   @question = Question.find_by(survey_id: @survey.id)
-  puts "Question"
-  puts "*" * 50
-  puts @question
-  puts "*" * 50
 
   @choice = Choice.find_by(question_id: @question.id)
-  puts "Choice"
-  puts "*" * 50
-  puts @choice
-  puts "*" * 50
+
   @hey = Surveyship.find_by(author_id: @survey.user_id)
-  puts "SURVEYSHIP"
-    puts "*" * 50
-    puts @hey.inspect
-  puts "*" * 50
 
   @user = User.find_by(id: @hey.author_id)
-  puts "USER"
-    puts "*" * 50
-    puts @user.inspect
-  puts "*" * 50
 
   erb :'surveys/show'
 end
+
+get '/surveys/taken' do
+
+end
+
 
 get 'surveys/:id/edit' do
 end
@@ -67,7 +54,5 @@ put 'surveys/:id' do
 end
 
 delete 'survey/:id' do
-
-
 end
 
