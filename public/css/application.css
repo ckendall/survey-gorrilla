@@ -11,11 +11,12 @@
 
 .center_div {
   margin:0 auto;
-  width:40%;
+  width:40%
 }
 
 .navbar{
   background-color: #ffff00;
+  margin-bottom:0;
 }
 
 .go-bananas {
@@ -34,14 +35,14 @@
   color: black;
 }
 
-.bottom {
+/*.bottom {
   height: 60px;
   width: 100%;
   bottom: 0;
   background-color: #E8E8E8;
   position: absolute;
   text-align: center;
-}
+}*/
 
 .form-labels {
   padding:10px;
@@ -49,4 +50,15 @@
 
 .logout-color {
   background-color: #663300;
+}
+
+.background-layout {
+  position:absolute;
+  z-index: -10;
+  width:100%;
+  height:auto;
+}
+
+body {
+  color:#663300;
 }

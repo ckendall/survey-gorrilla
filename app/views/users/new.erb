@@ -3,13 +3,13 @@
     <div class="col-sm-12">
       <h1 class="text-center">Join Survey Gorilla!</h1>
       <p class="text-center">Please fill in the following information.</p>
-      <form class="login-form" action="/users/new" method="post">
+      <form class="login-form center_div" action="/users/new" method="post">
         <p class="errors">
           <% if params[:errors] != nil %>
             Something went wrong here ... <%=params[:errors] %>
           <% end %>
         </p>
-        <div class="form-group">
+        <div class="form-group login-stuff text-center">
           <label for="username">Username:</label>
           <input class="form-control" type="text" name="username" placeholder="jonnyD">
         </div>
