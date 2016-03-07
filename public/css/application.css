@@ -22,3 +22,27 @@
   height:300px;
   width:auto;
 }
+.gorilla {
+  text-align: center;
+}
+
+.nav-bar li {
+  padding: 10px;
+}
+
+.nav-bar a {
+  color: black;
+}
+
+.bottom {
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  background-color: #E8E8E8;
+  position: absolute;
+  text-align: center;
+}
+
+.form-labels {
+  padding:10px;
+}
