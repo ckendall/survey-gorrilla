@@ -21,12 +21,9 @@ post '/surveys' do
 end
 
 get '/surveys/:id' do
-
   @survey = Survey.find(params[:id])
   @question = Question.find_by(survey_id: @survey.id)
-  p @question
   @choice = Choice.find_by(question_id: @question.id)
-  p @choice
   @hey = Surveyship.find_by(author_id: @survey.user_id)
   @user = User.find_by(id: @hey.author_id)
   erb :'surveys/show'
