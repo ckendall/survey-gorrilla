@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     loads bootstrap
   -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -10,7 +10,7 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/application.js"></script>
 
@@ -21,7 +21,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <% if session[:user_id] %>
-          <a class="login-logo" href='/user/<%=session[:user_id]%>'><img class="login-logo" src="/imgs/survey_gorilla.png" alt="gorilla logo"></a>
+          <a class="login-logo" href='/users/<%=session[:user_id]%>'><img class="login-logo" src="/imgs/survey_gorilla.png" alt="gorilla logo"></a>
         <% else %>
           <div class="login-logo">
             <img class="login-logo" src="/imgs/survey_gorilla.png" alt="gorilla logo">
@@ -30,7 +30,7 @@
       </div>
       <% if session[:user_id] %>
         <div class="navbar-left">
-          <form class="navbar-form" action='/users/tweets' method='post'>
+          <form class="navbar-form" action='/surveys' method='post'>
             <div class="form-group search">
               <input class="form-control" type='text' name='username'>
               <button type="submit" class="btn btn-default">Search</button>
